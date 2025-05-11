@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Merena Brand</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff0f5;
+    }
+
+    #top_section {
+      padding: 10px;
+      background-color: #ffe55529;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #d63384;
+      font-weight: bold;
+      margin-left: 100px;
+      cursor: pointer;
+    }
+
+    #open-menu, #search {
+      font-size: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #open-menu:hover, #search:hover {
+      color: #d63384;
+    }
+
+    #menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #fff;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      z-index: 9999;
+      padding-top: 20px;
+    }
+
+    #menu.active {
+      left: 0;
+    }
+
+    #menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #menu ul li {
+      padding: 15px 20px;
+    }
+
+    #menu ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    #menu ul li a:hover {
+      color: #d63384;
+    }
+
+    #close-menu {
+      font-size: 30px;
+      cursor: pointer;
+      text-align: right;
+      padding: 10px 20px;
+    }
+
+    #close-menu:hover {
+      color: #72B735;
+    }
+
+    #overlay_background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 9998;
+    }
+
+    #hero_section {
+      background-image: url('image/Untitled design (4).png');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      border-radius: 20px;
+    }
+
+    .btn-primary {
+      background-color: #d63384;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #c2185b;
+      transform: scale(1.05);
+    }
+
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .card-title {
+      color: #d63384;
+      font-weight: bold;
+    }
+
+    .card-price {
+      color: #72B735;
+      font-size: 1.2rem;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <section id="top_section" class="px-3">
+    <span id="open-menu" onclick="show_menu()"><i class='bx bx-menu'></i></span>
+    <span id="logo">Merena Brand</span>
+    <span id="search"><i class="fa-solid fa-magnifying-glass"></i> <i class='bx bx-shopping-bag'></i></span>
+  </section>
+
+  <!-- Side Menu -->
+  <nav id="menu">
+    <div id="close-menu" onclick="hide_menu()"><i class='bx bx-x-circle'></i></div>
+    <ul>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="overlay_background" onclick="hide_menu()"></div>
+
+  <!-- Hero Section -->
+  <section id="hero_section">
+    <div>
+      <h1 style="font-family: 'Great Vibes', cursive; font-size: 60px;">Welcome to Merena Brand</h1>
+      <p style="font-size: 20px;">Your one-stop shop for all your fashion needs.</p>
+      <a href="#products" class="btn btn-primary mt-3">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="py-5">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <!-- Product Card -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img src="image/5983171833588991067_121.jpg" class="card-img-top" alt="product1">
+            <div class="card-body">
+              <h5 class="card-title">Elegant Dress</h5>
+              <p class="card-text">A stunning evening gown for all occasions.</p>
+              <div class="card-price">$49.99</div>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat with other products -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img src="image/5983171833588991060_121.jpg" class="card-img-top" alt="product2">
+            <div class="card-body">
+              <h5 class="card-title">Summer Outfit</h5>
+              <p class="card-text">Light and comfy outfit for warm days.</p>
+              <div class="card-price">$34.99</div>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more product cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    function show_menu() {
+      document.getElementById("menu").classList.add("active");
+      document.getElementById("overlay_background").style.display = "block";
+    }
+
+    function hide_menu() {
+      document.getElementById("menu").classList.remove("active");
+      document.getElementById("overlay_background").style.display = "none";
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
